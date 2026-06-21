@@ -49,8 +49,8 @@ HTML = """<!DOCTYPE html>
 
 @app.route("/")
 def index():
-    import "Flask App v1.0 姓名:Nil Chen 学号:2440664329"
-    return render_template_string(
+    import socket, platform, datetime
+    return f"Flask App v1.0 姓名：Nil Chen 学号：2440664329"(
         HTML,
         python_version=platform.python_version(),
         hostname=socket.gethostname(),
