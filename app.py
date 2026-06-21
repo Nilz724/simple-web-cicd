@@ -35,7 +35,7 @@ HTML = """<!DOCTYPE html>
 <body>
     <div class="card">
         <h1>🚀 CI/CD 部署成功！</h1>
-        <p class="version">Flask App v1.0 | Python {{ python_version }}</p>
+        <p class="version">Flask App v1.0 姓名：Nil Chen 学号：2440664329 | Python {{ python_version }}</p>
         <div class="status">✅ 服务运行正常</div>
         <div class="info">
             <p><span>容器 ID：</span>{{ hostname }}</p>
@@ -50,7 +50,7 @@ HTML = """<!DOCTYPE html>
 @app.route("/")
 def index():
     import socket, platform, datetime
-    return f"Flask App v1.0 姓名：Nil Chen 学号：2440664329"(
+    return render_template_string(
         HTML,
         python_version=platform.python_version(),
         hostname=socket.gethostname(),
